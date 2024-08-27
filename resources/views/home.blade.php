@@ -19,8 +19,8 @@
         <div id="topo">
             <h1>Participantes</h1>
             <div>
-                <button>Adicionar</button>
-                <button>Filtrar</button>
+                <a href="{{ route('cadastro') }}">Adicionar</a>
+                <a href="">Filtrar</a>
             </div>
         </div>
 

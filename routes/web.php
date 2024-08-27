@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/Cadastro', function () {
     return view('cadastro');
-});
+})->name('cadastro');
 
 Route::post('/adicionar-participante', [ParticipanteController::class, 'store'])->name('participantes.store');
 Route::get('/home', [ParticipanteController::class, 'index'])->name('home');
