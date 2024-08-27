@@ -48,7 +48,8 @@
                         <li class="nomeParticipante">{{ $participante->nome }}</li>
                         <li class="emailParticipante">{{ $participante->email }}</li>
                         <li class="BtnsParticipante">
-                            <button>editar</button>
+                        <button class="btn-editar" onclick="window.location.href='{{ route('participantes.edit', $participante->id) }}'">Editar</button>
+
                             <button class="btn-excluir" data-id="" onclick="msgConfirm(this)">Excluir</button>
                         </li>
                     </ul>

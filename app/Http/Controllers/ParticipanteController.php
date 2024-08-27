@@ -55,4 +55,35 @@ class ParticipanteController extends Controller
         return view('sorteio', ['pares' => $pares]);
     }
 
+    // app/Http/Controllers/ParticipanteController.php
+
+    public function edit($id)
+    {
+        // Buscar o participante pelo ID
+        $participante = Participante::findOrFail($id);
+
+        // Retornar a view de edição com os dados do participante
+        return view('editar', compact('participante'));
+    }
+
+    // app/Http/Controllers/ParticipanteController.php
+
+public function update(Request $request, $id)
+{
+    // Validar os dados recebidos
+    $validated = $request->validate([
+        'nome' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+    ]);
+
+    // Buscar o participante e atualizar os dados
+    $participante = Participante::findOrFail($id);
+    $participante->update($validated);
+
+    // Redirecionar para a página inicial ou outra de sua escolha
+    return redirect()->route('home')->with('success', 'Participante atualizado com sucesso!');
+}
+
+
+
 }
