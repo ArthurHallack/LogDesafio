@@ -13,7 +13,7 @@ document.getElementById('formAdd').addEventListener('submit', function(event) {
 
         this.submit(); 
 
-        // Exibir a mensagem de sucesso
+        // Exibir a mensagem de sucesso...
         successMessageP.textContent = 'Formulário enviado com sucesso!';
         successMessageDiv.style.display = 'block';
     } else {

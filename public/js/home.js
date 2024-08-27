@@ -27,7 +27,7 @@ function test() {
         })
         .then(data => {
             if (data.success) {
-                location.reload(); // Ou use código para remover o item da lista
+                location.reload();
             } else {
                 alert('Erro ao excluir o participante.');
             }

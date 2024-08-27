@@ -14,33 +14,27 @@ class ParticipanteController extends Controller
             'nome' => 'required|string|max:255',
             'email' => 'required|email|unique:participantes,email',
         ]);
-
         // Criação do novo participante
         Participante::create([
             'nome' => $request->input('nome'),
             'email' => $request->input('email'),
         ]);
 
-        // Redirecionar ou retornar uma resposta
         return redirect('/Cadastro')->with('success', 'Participante adicionado com sucesso!');
     }
 
     public function index()
     {
-    $participantes = Participante::all(); // Obtém todos os participantes
+    $participantes = Participante::all(); 
 
-    return view('home', compact('participantes')); // Passa os participantes para a view
+    return view('home', compact('participantes'));
     }
 
     public function sorteio()
     {
-        // Buscar todos os participantes
         $participantes = Participante::all();
-        
-        // Embaralhar a lista de participantes
-        $participantes = $participantes->shuffle();
-        
-        // Unir participantes em pares
+        $participantes = $participantes->shuffle();      
+        // Une em pares
         $pares = [];
         for ($i = 0; $i < count($participantes); $i += 2) {
             if (isset($participantes[$i + 1])) {
@@ -55,69 +49,55 @@ class ParticipanteController extends Controller
         return view('sorteio', ['pares' => $pares]);
     }
 
-    // app/Http/Controllers/ParticipanteController.php
-
     public function edit($id)
     {
-        // Buscar o participante pelo ID
         $participante = Participante::findOrFail($id);
 
-        // Retornar a view de edição com os dados do participante
         return view('editar', compact('participante'));
     }
 
-    // app/Http/Controllers/ParticipanteController.php
+    public function update(Request $request, $id)
+    {
+        // Validar os dados recebidos
+        $validated = $request->validate([
+            'nome' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+        ]);
 
-public function update(Request $request, $id)
-{
-    // Validar os dados recebidos
-    $validated = $request->validate([
-        'nome' => 'required|string|max:255',
-        'email' => 'required|email|max:255',
-    ]);
-
-    // Buscar o participante e atualizar os dados
-    $participante = Participante::findOrFail($id);
-    $participante->update($validated);
-
-    // Redirecionar para a página inicial ou outra de sua escolha
-    return redirect()->route('home')->with('success', 'Participante atualizado com sucesso!');
-}
-
-public function filtrar(Request $request)
-{
-    $query = Participante::query();
-
-    if ($request->filled('nome')) {
-        $query->where('nome', 'like', '%' . $request->nome . '%');
-    }
-
-    if ($request->filled('email')) {
-        $query->where('email', 'like', '%' . $request->email . '%');
-    }
-
-    $participantes = $query->get();
-
-    return view('home', compact('participantes'));
-}
-
-public function excluir(Request $request, $id)
-{
-    // Verifica se a variável `confirmar` é true
-    if ($request->input('confirmar') === 'true') {
-        // Encontra o participante pelo ID e o exclui
         $participante = Participante::findOrFail($id);
-        $participante->delete();
+        $participante->update($validated);
 
-        // Retorna uma resposta JSON indicando sucesso
-        return response()->json(['success' => true]);
+        // Redirecionar para a página inicial ou outra de sua escolha
+        return redirect()->route('home')->with('success', 'Participante atualizado com sucesso!');
     }
 
-    // Caso a variável `confirmar` não seja true, retorna uma resposta JSON indicando falha
-    return response()->json(['success' => false]);
-}
+    public function filtrar(Request $request)
+    {
+        $query = Participante::query();
 
+        if ($request->filled('nome')) {
+            $query->where('nome', 'like', '%' . $request->nome . '%');
+        }
 
+        if ($request->filled('email')) {
+            $query->where('email', 'like', '%' . $request->email . '%');
+        }
 
+        $participantes = $query->get();
 
+        return view('home', compact('participantes'));
+    }
+
+    public function excluir(Request $request, $id)
+    {
+        if ($request->input('confirmar') === 'true') {
+
+            $participante = Participante::findOrFail($id);
+            $participante->delete();
+
+            return response()->json(['success' => true]);
+        }
+
+        return response()->json(['success' => false]);
+    }
 }
