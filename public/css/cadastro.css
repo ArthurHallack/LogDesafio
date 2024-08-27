@@ -97,3 +97,16 @@ main{
     width: 6rem;
     height: 2rem;
 }
+
+/*mensagem de erro*/
+
+#error-message {
+    position: absolute;
+    width: 25rem;
+    height: 4rem;
+    right: 0%;
+    top: 7%;
+    border-radius: 4px;
+    color: black;
+    display: none; /* Isso deve esconder o elemento */
+}
