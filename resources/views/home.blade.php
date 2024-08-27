@@ -34,20 +34,21 @@
         </div>
 
         <div id="Filtro">
-        <form id="formFiltro" action="{{ route('participantes.filtrar') }}" method="GET">
-                <fieldset>
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome">
-                </fieldset>
-                <fieldset>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                </fieldset>
+            <form id="formFiltro" action="{{ route('participantes.filtrar') }}" method="GET">
+                <div>
+                    <fieldset>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </fieldset>
+                </div>
                 <div id="BTNSfiltro">
                     <button type="submit" id="BtnFiltrar">Filtrar</button>
                     <button type="button" id="BtnLimpar" onclick="limparFiltro()">Remover</button>
                 </div>
-
             </form>
         </div>
 

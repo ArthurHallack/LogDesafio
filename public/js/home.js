@@ -18,11 +18,10 @@ function MostrarFiltro () {
 }
 
 function limparFiltro() {
-    // Limpar os campos de filtro
+    // Limpa os campos de filtro
     document.getElementById('nome').value = '';
     document.getElementById('email').value = '';
-
-    // Submeter o formulário com os campos vazios
+    
     document.getElementById('formFiltro').submit();
 }
 

@@ -182,14 +182,14 @@ main{
     border-radius: 5px;
 }
 
-#Filtro fieldset{
+#formFiltro fieldset{
     display: flex;
     flex-direction: column;
     gap: 5px;
     border: none;
 }
 
-#Filtro div {
+#formFiltro div {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -210,7 +210,7 @@ main{
 }
 
 #BTNSfiltro{
-    position: relative;
+    margin-left: 65%;
 }
 
 #BtnFiltrar{
@@ -221,4 +221,11 @@ main{
 #BtnLimpar{
     width: 6rem;
     height: 2rem;
+}
+
+#formFiltro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }
