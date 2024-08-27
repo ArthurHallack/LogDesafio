@@ -28,7 +28,7 @@
         <div id="confirm-excluir">
             <p>Deseja realmente excluir ?</p>
             <div>
-                <button id="excluir">sim</button>
+                <button id="excluir" onclick="test()">sim</button>
                 <button id="negar" onclick="negarMsg()">Não</button>
             </div>
         </div>
@@ -68,9 +68,10 @@
                         <li class="nomeParticipante">{{ $participante->nome }}</li>
                         <li class="emailParticipante">{{ $participante->email }}</li>
                         <li class="BtnsParticipante">
-                        <button class="btn-editar" onclick="window.location.href='{{ route('participantes.edit', $participante->id) }}'">Editar</button>
+                            <button class="btn-editar" onclick="window.location.href='{{ route('participantes.edit', $participante->id) }}'">Editar</button>
 
-                            <button class="btn-excluir" data-id="" onclick="msgConfirm(this)">Excluir</button>
+                            <button class="btn-excluir" data-id="{{ $participante->id }}" onclick="msgConfirm(this)">Excluir</button>
+
                         </li>
                     </ul>
                     @endforeach
@@ -80,4 +81,5 @@
         </div>
     </main>
 </body>
+
 </html>

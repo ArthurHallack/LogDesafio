@@ -101,6 +101,23 @@ public function filtrar(Request $request)
     return view('home', compact('participantes'));
 }
 
+public function excluir(Request $request, $id)
+{
+    // Verifica se a variável `confirmar` é true
+    if ($request->input('confirmar') === 'true') {
+        // Encontra o participante pelo ID e o exclui
+        $participante = Participante::findOrFail($id);
+        $participante->delete();
+
+        // Retorna uma resposta JSON indicando sucesso
+        return response()->json(['success' => true]);
+    }
+
+    // Caso a variável `confirmar` não seja true, retorna uma resposta JSON indicando falha
+    return response()->json(['success' => false]);
+}
+
+
 
 
 }
