@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+a{
+    color: rgb(144, 129, 157);
+}
+
 body{
     display: flex;
     flex-direction: column;

@@ -55,7 +55,7 @@
                     @endforeach
                 </div>
             </div>
-            <button id="BtnSorteio">Sortear</button>
+            <a id="BtnSorteio" href="{{ route('sorteio') }}">Sortear</a>
         </div>
     </main>
 </body>
