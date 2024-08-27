@@ -5,13 +5,6 @@
 # 📌  Sobre o projeto
 Este projeto se trata de um desafio simples com o intuito de testar os meus conhecimentos em logica de programação e desenvolvimento web.
 Consiste no desenvolvimento de um sistema capaz de realizar um sorteio de amigo secreto, ultilizando para cadastro apenas nome e email, além de permitir tbm a edição e deleção dos dados ja cadastrados.
-## Layout 🎨
-### layou inicial
-
-
-### layout cadastro 
-
-### layout sorteio
 
 # Técnologias utilizadas🛠
 <table>
