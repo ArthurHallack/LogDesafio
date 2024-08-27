@@ -32,4 +32,27 @@ class ParticipanteController extends Controller
     return view('home', compact('participantes')); // Passa os participantes para a view
     }
 
+    public function sorteio()
+    {
+        // Buscar todos os participantes
+        $participantes = Participante::all();
+        
+        // Embaralhar a lista de participantes
+        $participantes = $participantes->shuffle();
+        
+        // Unir participantes em pares
+        $pares = [];
+        for ($i = 0; $i < count($participantes); $i += 2) {
+            if (isset($participantes[$i + 1])) {
+                $pares[] = [$participantes[$i], $participantes[$i + 1]];
+            } else {
+                // Caso ímpar, o último participante ficará sem par
+                $pares[] = [$participantes[$i], null];
+            }
+        }
+
+        // Retornar a view com os pares
+        return view('sorteio', ['pares' => $pares]);
+    }
+
 }

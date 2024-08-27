@@ -17,4 +17,6 @@ Route::get('/Sorteio', function () {
 
 Route::post('/adicionar-participante', [ParticipanteController::class, 'store'])->name('participantes.store');
 Route::get('/home', [ParticipanteController::class, 'index'])->name('home');
+Route::get('/Sorteio', [ParticipanteController::class, 'sorteio'])->name('sorteio');
+
 
