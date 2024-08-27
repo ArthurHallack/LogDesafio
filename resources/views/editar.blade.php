@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar</title>
     <link rel="stylesheet" href="/css/editar.css">
+    <script src="/js/editar.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,7 +31,15 @@
                     <input type="email" id="email" name="email" value="{{ $participante->email }}" required>
                 </fieldset>
             </div>
-            <button type="submit" id="BtnSave">Salvar</button>
+            <div>
+                <button type="submit" id="BtnSave">Salvar</button>
+                <div id="error-message" style="color: red; display: none;">
+                    <p></p>
+                </div>
+                <div id="success-message" style="color: green; display: none;">
+                    <p></p>
+                </div>
+            </div>
         </form>
     </main>
 </body>

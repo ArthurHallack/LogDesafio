@@ -20,28 +20,27 @@
             <h1>Cadastro</h1>
         </div>
         <form method="POST" action="{{ route('participantes.store') }}" id="formAdd">
-    @csrf
-    <div id="inputsArea">
-        <fieldset>
-            <label for="inputNome">Nome</label>
-            <input type="text" id="inputNome" name="nome" minlength="3" maxlength="15" required>
-        </fieldset>
-        <fieldset>
-            <label for="inputEmail">Email</label>
-            <input type="text" id="inputEmail" name="email" minlength="12" maxlength="60" required>
-        </fieldset>
-    </div>
-    <div>
-        <button type="submit" id="BtnSave">Salvar</button>
-        <div id="error-message" style="color: red; display: none;">
-            <p></p>
-        </div>
-        <div id="success-message" style="color: green; display: none;">
-            <p></p>
-        </div>
-    </div>
-</form>
-
+            @csrf
+            <div id="inputsArea">
+                <fieldset>
+                    <label for="inputNome">Nome</label>
+                    <input type="text" id="inputNome" name="nome" minlength="3" maxlength="15" required>
+                </fieldset>
+                <fieldset>
+                    <label for="inputEmail">Email</label>
+                    <input type="text" id="inputEmail" name="email" minlength="12" maxlength="60" required>
+                </fieldset>
+            </div>
+            <div>
+                <button type="submit" id="BtnSave">Salvar</button>
+                <div id="error-message" style="color: red; display: none;">
+                    <p></p>
+                </div>
+                <div id="success-message" style="color: green; display: none;">
+                    <p></p>
+                </div>
+            </div>
+        </form>
 
     </main>
 
