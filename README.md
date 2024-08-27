@@ -48,5 +48,5 @@ Consiste no desenvolvimento de um sistema capaz de realizar um sorteio de amigo 
 <ul>
     <li>Visual Estudio Code
     <li>XAMPP
-    <li>Compose
+    <li>Composer
 </ul>
