@@ -9,7 +9,7 @@
 <body>
     <header>
             <nav>
-                <h1>Amigo Secreto</h1>
+                <h1>Amigo Secreto 🎁</h1>
                 <a id="BtnSorteio" href="{{ route('home') }}">Home</a>
             </nav>
     </header>

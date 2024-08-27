@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <h1>Amigo Secreto</h1>
+            <h1>Amigo Secreto 🎁</h1>
         </nav>
     </header>
     <main>
