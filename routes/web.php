@@ -24,6 +24,8 @@ Route::get('/home', [ParticipanteController::class, 'index'])->name('home');
 Route::get('/Sorteio', [ParticipanteController::class, 'sorteio'])->name('sorteio');
 Route::get('/Editar/{id}', [ParticipanteController::class, 'edit'])->name('participantes.edit');
 Route::put('/Atualizar/{id}', [ParticipanteController::class, 'update'])->name('participantes.update');
+Route::get('/filtrar-participantes', [ParticipanteController::class, 'filtrar'])->name('participantes.filtrar');
+
 
 
 

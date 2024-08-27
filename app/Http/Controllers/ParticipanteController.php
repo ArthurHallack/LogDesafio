@@ -84,6 +84,23 @@ public function update(Request $request, $id)
     return redirect()->route('home')->with('success', 'Participante atualizado com sucesso!');
 }
 
+public function filtrar(Request $request)
+{
+    $query = Participante::query();
+
+    if ($request->filled('nome')) {
+        $query->where('nome', 'like', '%' . $request->nome . '%');
+    }
+
+    if ($request->filled('email')) {
+        $query->where('email', 'like', '%' . $request->email . '%');
+    }
+
+    $participantes = $query->get();
+
+    return view('home', compact('participantes'));
+}
+
 
 
 }

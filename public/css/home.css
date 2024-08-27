@@ -53,6 +53,10 @@ main{
     width: 90%;
 }
 
+#Filtroh1{
+    display: none;
+}
+
 #topo div {
     margin-right: 2rem;
     display: flex;
@@ -68,6 +72,7 @@ main{
     padding-right: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    border-radius: 5px 5px;
 }
 
 #tabela{
@@ -85,6 +90,7 @@ main{
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-radius: 5px 5px 0px 0px;
 }
 
 #hud ul{
@@ -159,4 +165,60 @@ main{
 
 #confirm-excluir{
     display: none;
+}
+
+/*fomulario de filtragem*/
+
+#Filtro{
+    width: 88%;
+    height: 30vh;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #d5d5d5fd;
+    border-radius: 5px;
+}
+
+#Filtro fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+}
+
+#Filtro div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#nome{
+    border: none;
+    border-radius: 2px;
+    height: 1.5rem;
+    width: 15rem;
+}
+
+#email{
+    border: none;
+    border-radius: 2px;
+    height: 1.5rem;
+    width: 20rem;
+}
+
+#BTNSfiltro{
+    position: relative;
+}
+
+#BtnFiltrar{
+    width: 6rem;
+    height: 2rem;
+}
+
+#BtnLimpar{
+    width: 6rem;
+    height: 2rem;
 }

@@ -17,10 +17,11 @@
     </header>
     <main>
         <div id="topo">
-            <h1>Participantes</h1>
-            <div>
+            <h1 id="partici">Participantes</h1>
+            <h1 id="Filtroh1">Filtragem</h1>
+            <div id="BtnsTopo">
                 <a href="{{ route('cadastro') }}">Adicionar</a>
-                <a href="">Filtrar</a>
+                <a id="BtnFiltro" onclick="MostrarFiltro()">Filtrar</a>
             </div>
         </div>
 
@@ -30,6 +31,24 @@
                 <button id="excluir">sim</button>
                 <button id="negar" onclick="negarMsg()">Não</button>
             </div>
+        </div>
+
+        <div id="Filtro">
+        <form id="formFiltro" action="{{ route('participantes.filtrar') }}" method="GET">
+                <fieldset>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome">
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </fieldset>
+                <div id="BTNSfiltro">
+                    <button type="submit" id="BtnFiltrar">Filtrar</button>
+                    <button type="button" id="BtnLimpar" onclick="limparFiltro()">Remover</button>
+                </div>
+
+            </form>
         </div>
 
         <div id="Container">
