@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <script src="/js/cadastro.js"></script>
 </head>
 <body>
 <form method="POST" action="{{ route('participantes.store') }}" id="formAdd">

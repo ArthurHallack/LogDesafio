@@ -24,4 +24,12 @@ class ParticipanteController extends Controller
         // Redirecionar ou retornar uma resposta
         return redirect('/Cadastro')->with('success', 'Participante adicionado com sucesso!');
     }
+
+    public function index()
+    {
+    $participantes = Participante::all(); // Obtém todos os participantes
+
+    return view('home', compact('participantes')); // Passa os participantes para a view
+    }
+
 }

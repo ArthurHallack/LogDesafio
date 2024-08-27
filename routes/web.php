@@ -12,3 +12,5 @@ Route::get('/Cadastro', function () {
 });
 
 Route::post('/adicionar-participante', [ParticipanteController::class, 'store'])->name('participantes.store');
+Route::get('/home', [ParticipanteController::class, 'index'])->name('home');
+
